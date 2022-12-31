@@ -1,13 +1,13 @@
-﻿namespace Algorithms.Sorting
+﻿namespace Algorithms.Sorting.Algorithms
 {
+    /// <summary>
+    ///     Time complexity: O(n^2).
+    /// </summary>
     public class BubbleSort : IStrategy
     {
-        private int[] array { get; }
+        public int[] array { get; }
 
-        public BubbleSort(int[] array)
-        {
-            this.array = array;
-        }
+        public BubbleSort(int[] array) => this.array = array;
 
         public void Sort()
         {
@@ -21,12 +21,17 @@
                 {
                     if (array[i] > array[i + 1])
 
-                        (array[i], array[i + 1]) = (array[i + 1], array[i]);
+                        Swap(ref array[i], ref array[i + 1]);
                     swapRequired = true;
                 }
                 arrayLength--;
 
             } while (swapRequired == true);
         }
+        static void Swap(ref int e1, ref int e2)
+        {
+            (e1, e2) = (e2, e1);
+        }
+
     }
 }

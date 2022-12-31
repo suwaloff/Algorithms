@@ -8,13 +8,16 @@ namespace Algorithms.Sorting
 {
     public class Sorting
     {
-        public IStrategy ContextStrategy { get; set; }
-
-        public Sorting( IStrategy strategy) => ContextStrategy = strategy;
+        private IStrategy SortingStrategy { get; set; }
+        
+        public Sorting(IStrategy strategy)
+        {
+            SortingStrategy = strategy;
+        }  
        
         public void Sort()
         {
-            ContextStrategy.Sort();
+            SortingStrategy.Sort();
         }
     }
 }
