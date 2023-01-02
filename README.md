@@ -1,4 +1,3 @@
-# this reprository created for my learning basic algoritms
-### Search Algorithms: -Lineary  - Binary 
-### Sort Algorithms: -Bubble
+## this reprository created for my learning basic algoritms
+
 ### Status: Inprocess 
