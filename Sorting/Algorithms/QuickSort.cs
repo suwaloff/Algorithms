@@ -1,5 +1,8 @@
 ﻿namespace Algorithms.Sorting.Algorithms
 {
+    /// <summary>
+    ///     A Quick Sort algorithm implementation
+    /// </summary>
     public class QuickSort : IStrategy
     {
         private int[] array { get; }
@@ -18,10 +21,8 @@
         }
         void Quicksort(int[] array, int start, int end)
         {
-            if (start >= end)
-            {
-                return;
-            }
+            if (start >= end) return;
+           
             int pivot = Partition(array, start, end);
             Quicksort(array, start, pivot - 1);
             Quicksort(array, pivot + 1, end);
@@ -35,19 +36,14 @@
             {
                 if (array[i] < array[end])
                 {
-                    Swap(ref array[pivot], ref array[i]);
+                    Helping.Swap(ref array[pivot], ref array[i]);
                     pivot++;
                 }
             }
 
-            Swap(ref array[pivot], ref array[end]);
+            Helping.Swap(ref array[pivot], ref array[end]);
 
             return pivot;
-        }
-
-        static void Swap(ref int e1, ref int e2)
-        {
-            (e1, e2) = (e2, e1);
         }
     }
 }

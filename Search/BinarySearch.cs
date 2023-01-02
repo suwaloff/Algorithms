@@ -1,17 +1,15 @@
 ﻿namespace Algorithms.Search
 {
-    public class BinarySearch : IStrategy
+    /// <summary>
+    ///     A binary search algorithm implementation
+    /// </summary>
+    public class BinarySearch
     {
-        public int Search(int key, int[] array)
+        public static int Search(int[] array, int key)
         {
             int first = 0;
-            int last = array.Length;
+            int last = array.Length - 1;
             int mid = 0;
-
-            //if (array is null)
-            //{
-            //    return -1;
-            //}
 
             while (first <= last)
             {
@@ -24,7 +22,7 @@
                 else break;
             }
 
-            if (array[mid] == key) return mid;
+            if (array[mid] == key) return key;
 
             return -1;
         }
